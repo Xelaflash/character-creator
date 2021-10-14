@@ -1,9 +1,12 @@
 .characterEditor {
   padding-top: 128px;
   padding-bottom: 64px;
+  position: relative;
+  height: 100%;
 }
 
 .maxWidthWrapper {
+  max-width: 1024px;
 }
 
 .header {
@@ -24,7 +27,46 @@
 }
 
 .characterWrapper {
+  min-height: 500px;
+  position: fixed;
 }
 
 .controlColumn {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+@media (min-width: 812px) {
+  .characterWrapper {
+    top: 132px;
+    right: 0;
+    height: 600px;
+  }
+  .header {
+    max-width: 65%;
+  }
+  .controlColumn {
+    width: 50%;
+  }
+}
+
+@media (max-width: 811px) {
+  .characterEditor {
+    isolation: isolate;
+  }
+  .characterWrapper {
+    top: 0px;
+    width: 100%;
+    margin: 10px auto;
+  }
+  .controlColumn {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  }
+  .header {
+    display: none;
+  }
 }
